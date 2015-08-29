@@ -10,9 +10,9 @@ License: MIT
 */
 
 // excerpt function that respects HTML tags
-function iloveitaly_fancy_post_excerpt() {
+function iloveitaly_fancy_post_excerpt($ending = '') {
   $processed_content = strip_tags(apply_filters('the_content', get_the_content('')), "<p><b><i><strong><em>");
-  $processed_content = truncate_html($processed_content, 500, '', false, true);
+  $processed_content = truncate_html($processed_content, 500, $ending, false, true);
   return $processed_content;
 }
 
